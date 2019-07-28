@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Resume - Start Bootstrap Theme</title>
+  <title>Dré Randaci, Software Developer</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,12 +27,13 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">Clarence Taylor</span>
+      <span class="d-block d-lg-none">Dré Randaci</span>
       <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/headshot_paris.png" alt="">
       </span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -43,9 +44,9 @@
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
         </li>
@@ -63,24 +64,29 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
       <div class="w-100">
-        <h1 class="mb-0">Clarence
-          <span class="text-primary">Taylor</span>
+        <h1 class="mb-0">Dré
+          <span class="text-primary">Randaci</span>
         </h1>
-        <div class="subheading mb-5">3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
-          <a href="mailto:name@email.com">name@email.com</a>
+        <div class="subheading mb-5">Nashville, TN
+          <a href="mailto:name@email.com">drerandaci@gmail.com</a>
         </div>
-        <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+        <p class="lead mb-5">
+          I have held positions specializing in IT services as a programmer and business
+          intelligence analyst. My practical experience includes systems integration, ETL,
+          business
+          intelligence, data warehousing, mobile app development, fullstack web development, and team collaboration.
+          Find me online via the links below.</p>
         <div class="social-icons">
-          <a href="#">
+          <a href="https://www.linkedin.com/in/dre-randaci/" target="_blank">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="#">
+          <a href="https://github.com/DreRandaci" target="_blank">
             <i class="fab fa-github"></i>
           </a>
-          <a href="#">
+          <a href="https://twitter.com/drerandaci" target="_blank">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="#">
+          <a href="https://www.facebook.com/dre.randaci" target="_blank">
             <i class="fab fa-facebook-f"></i>
           </a>
         </div>
@@ -91,49 +97,141 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
       <div class="w-100">
-        <h2 class="mb-5">Experience</h2>
+        <h2 class="mb-5"> Technical Experience</h2>
 
+        <!-- INFOWORKS -->
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0">Senior Web Developer</h3>
-            <div class="subheading mb-3">Intelitec Solutions</div>
-            <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+            <h3 class="mb-0">Software Developer</h3>
+            <div class="subheading mb-3">InfoWorks</div>
+            <div class="list-group-flush">
+              <div class="list-group-item flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Data warehousing and ETL</h5>
+                </div>
+                <p class="mb-1">While working for a Fortune 200 manufacturing client, I built a dimensional Data
+                  Warehouse for
+                  reporting and analytics. The warehouse integrated five SQL Server databases holding
+                  gigabites worth of data each that required extraction from different server locations and heavy
+                  cleansing via SQL stored procedures. The model was based on <a
+                    href="https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/">Ralph
+                    Kimball's Dimensional Modeling</a>.
+                  I executed an architecture that follows a simple ETL pattern
+                  using four schema definitions (staging, ods, dim, fact):
+                  <ul>
+                    <li>Extract data based on a date delta (daily) and strip of all referential integrity (no foreign
+                      keys, indexes, primary keys)</li>
+                    <li>Utilize an ODS (Operational Data Store) to transform the data. The ODS layer primarily acted
+                      as a gate keeper; all records were transformed into target data shapes for use upstream in the dim
+                      and fact layer. If an entity was named one thing in one database and something else in another,
+                      transform both into a common name. This included removing all <code>NULL</code> values and
+                      replacing them with the mapped defaults below based on column data types:
+                      <br />
+                      <div class="mx-2 my-2">
+                        <div class="px-4 py-4">
+                          <script src="https://gist.github.com/DreRandaci/fe6b73649ccd1ca41ea36bb98c6131e3.js"></script>
+                        </div>
+                      </div>
+                    </li>
+                    <li>Load the model with facts and dimensions defined in the reporting and business requirements.
+                      Tables were created under their respective schema layer names (fact.TableName, dim.TableName,
+                      etc.).
+                      Facts are the measurements that result from a business process event, while dimensions provide the
+                      “who,
+                      what, where, when, why, and how” context surrounding a business process event</li>
+                  </ul>
+                  The system decreased the amount of time to deliver
+                  reports for product genealogies dramatically; previously, these reports were generated in anywhere
+                  from
+                  1-4 days and involved multiple management teams. Once implemented,
+                  the Data Warehouse could generate these reports with only the latency of the query.
+                  <br />
+                  <br />
+                  <!-- <a href="blog/index.html">More on Data Warehousing</a> -->
+                </p>
+
+                <small>SQL Server, Visual Studio Schema Compare, TFS</small>
+              </div>
+            </div>
+            <div class="list-group-flush">
+              <div class="list-group-item flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Application Development</h5>
+                </div>
+                <p class="mb-1">As part of a team of five developers, I helped build an application for a Fortune
+                  200 manufacturing company to operate their packing processes. This system implemented new
+                  functionality to track product
+                  packing, quality control, quality acceptance, and to replace antiquated paper checklists. Business
+                  logic was strictly segragated to the database layer and communicated with various systems, all
+                  supported by a
+                  JavaScript web app. My main duties were to build out the database and business logic and communicate
+                  with various consuming PLC's and HMI's. I also built JavaScript views to support the web app. One of
+                  the most interesting
+                  features I worked on was an operator checklist system based on a matrix table that associated criteria
+                  to
+                  corresponding
+                  entities and were instantiated by event-driven triggers.
+                </p>
+                <br />
+                <small>Kendo-UI jQuery, SQL Server, Visual Studio, TFS</small>
+              </div>
+            </div>
           </div>
           <div class="resume-date text-md-right">
-            <span class="text-primary">March 2013 - Present</span>
+            <span class="text-primary">October 2018 - Present</span>
           </div>
         </div>
 
+        <!-- PXLPOTION -->
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0">Web Developer</h3>
-            <div class="subheading mb-3">Intelitec Solutions</div>
-            <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">December 2011 - March 2013</span>
-          </div>
-        </div>
+            <h3 class="mb-0">Software Developer</h3>
+            <div class="subheading mb-3">PxlPotion</div>
+            <div class="list-group-flush">
+              <div class="list-group-item flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Application Development</h5>
+                </div>
+                <p class="mb-1">
+                  I worked on a number of web and mobile projects across industries mostly using JavaScript and MongoDB.
+                  Projects included:
+                  <ul>
+                    <li>A mobile application built for a moving company that allowed movers to walk through a move
+                      step-by-step with checklist milestones. The
+                      application was
+                      used
+                      by field workers to track inventory during a
+                      move, route to
+                      a destination, and
+                      aggregate move statistics. The
+                      application was cross-platform via the React Native library. Alongside the mobile app was a paired
+                      administrative web app for
+                      management to view workers in real time on a map utilizing web sockets. My main duties included
+                      building the
+                      mapping functionality in the mobile app and creating custom pagination for viewing historical
+                      data in the administrative app
+                    </li>
+                    <li>A facility management app (view <a href="https://www.mapplug.com/" target="_blank">MapPlug
+                        here</a>) that
+                      allowed users to mark building information on an interactive
+                      map. I implemented Google Maps and helped create customizable layering functionality to overlay
+                      images,
+                      icons, and info boxes onto a map. The web app was built mobile-first and utilized Material
+                      Design
+                      for React. In addition to implementing the map, I worked on navigation functionality, icon
+                      toggling, and created a movie player modal for
+                      new-user orienteering.
+                    </li>
+                  </ul>
+                </p>
 
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Junior Web Designer</h3>
-            <div class="subheading mb-3">Shout! Media Productions</div>
-            <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">July 2010 - December 2011</span>
-          </div>
-        </div>
+                <small>React, React Native, Node, iOS, Android, VS Code, Git</small>
+              </div>
+            </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-          <div class="resume-content">
-            <h3 class="mb-0">Web Design Intern</h3>
-            <div class="subheading mb-3">Shout! Media Productions</div>
-            <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
           </div>
           <div class="resume-date text-md-right">
-            <span class="text-primary">September 2008 - June 2010</span>
+            <span class="text-primary">April 2018 - October 2018</span>
           </div>
         </div>
 
@@ -143,37 +241,45 @@
 
     <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
+    <!-- <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
       <div class="w-100">
         <h2 class="mb-5">Education</h2>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0">University of Colorado Boulder</h3>
-            <div class="subheading mb-3">Bachelor of Science</div>
-            <div>Computer Science - Web Development Track</div>
-            <p>GPA: 3.23</p>
+            <h3 class="mb-0">Nashville Software School</h3>
+            <div class="subheading mb-3">Web Development</div>
+            <p>Fullstack development with AngularJS, React, Node and C#</p>
           </div>
           <div class="resume-date text-md-right">
-            <span class="text-primary">August 2006 - May 2010</span>
+            <span class="text-primary">June 2017 - March 2018</span>
           </div>
         </div>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
           <div class="resume-content">
-            <h3 class="mb-0">James Buchanan High School</h3>
-            <div class="subheading mb-3">Technology Magnet Program</div>
-            <p>GPA: 3.56</p>
+            <h3 class="mb-0">Nashville State Community College</h3>
+            <div class="subheading mb-3">Continued Education</div>
           </div>
           <div class="resume-date text-md-right">
             <span class="text-primary">August 2002 - May 2006</span>
           </div>
-        </div>
+  </div>
 
-      </div>
-    </section>
+  <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+    <div class="resume-content">
+      <h3 class="mb-0">State College of Florida</h3>
+      <div class="subheading mb-3">Technology Magnet Program</div>
+    </div>
+    <div class="resume-date text-md-right">
+      <span class="text-primary">August 2002 - May 2006</span>
+    </div>
+  </div>
 
-    <hr class="m-0">
+  </div>
+  </section> -->
+
+    <!-- <hr class="m-0"> -->
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
       <div class="w-100">
@@ -197,16 +303,10 @@
             <i class="fab fa-react"></i>
           </li>
           <li class="list-inline-item">
-            <i class="fab fa-node-js"></i>
+            <i class="fab fa-node"></i>
           </li>
           <li class="list-inline-item">
             <i class="fab fa-sass"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-less"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-wordpress"></i>
           </li>
           <li class="list-inline-item">
             <i class="fab fa-gulp"></i>
@@ -217,22 +317,48 @@
           <li class="list-inline-item">
             <i class="fab fa-npm"></i>
           </li>
+          <li class="list-inline-item">
+            <i class="fab fa-android"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-bootstrap"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-github"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-python"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fas fa-database"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-windows"></i>
+          </li>
         </ul>
 
         <div class="subheading mb-3">Workflow</div>
         <ul class="fa-ul mb-0">
           <li>
             <i class="fa-li fa fa-check"></i>
-            Mobile-First, Responsive Design</li>
+            Mobile-First, Responsive Design
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Cross Browser Testing &amp; Debugging</li>
+            Cross Browser Testing &amp; Debugging
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Cross Functional Teams</li>
+            Cross Functional Teams
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Agile Development &amp; Scrum</li>
+            Agile &amp; Kanban Development, Scrum
+          </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Test-Driven Development
+          </li>
         </ul>
       </div>
     </section>
@@ -242,8 +368,16 @@
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
       <div class="w-100">
         <h2 class="mb-5">Interests</h2>
-        <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-        <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+        <div class="container-fluid">
+          <img src="./img/bouldering.jpg" class="img-fluid" alt="Responsive image">
+        </div>
+        <br />
+        <p>Apart from being a developer, I spend most of my time outdoors. During the warmer months here in
+          Nashville, I enjoy mountain biking, rock climbing, cooking out, and
+          fly fishing.</p>
+        <p class="mb-0">When forced indoors, I follow a number of television shows,
+          I am an aspiring cook, and I spend a large amount of my free time exploring the latest technology advancements
+          in the machine learning, data science, and AI world.</p>
       </div>
     </section>
 
@@ -251,34 +385,50 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
       <div class="w-100">
-        <h2 class="mb-5">Awards &amp; Certifications</h2>
+        <h2 class="mb-5">Community Activities &amp; Certifications</h2>
         <ul class="fa-ul mb-0">
           <li>
             <i class="fa-li fa fa-trophy text-warning"></i>
-            Google Analytics Certified Developer</li>
+            Kanban Certified from <a target="_blank" href="https://edu.leankanban.com/">Lean Kanban University</a>
+          </li>
           <li>
             <i class="fa-li fa fa-trophy text-warning"></i>
-            Mobile Web Specialist - Google Certification</li>
+            Food Bank Volunteer for <a target="_blank" href="https://www.hon.org/">Hands on Nashville</a>
+          </li>
+          <li>
+            <i class="fa-li fa fa-trophy text-warning"></i>
+            Frontend Development Volunteer for <a target="_blank"
+              href="https://hcacaring.org/key-initiatives/hack-for-the-community.dot">HCA Hack for the Community</a>
+          </li>
+          <!-- <li>
+            <i class="fa-li fa fa-trophy text-warning"></i>
+            Mobile Web Specialist - Google Certification
+          </li>
           <li>
             <i class="fa-li fa fa-trophy text-warning"></i>
             1<sup>st</sup>
-            Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
+            Place - University of Colorado Boulder - Emerging Tech Competition 2009
+          </li>
           <li>
             <i class="fa-li fa fa-trophy text-warning"></i>
             1<sup>st</sup>
-            Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
+            Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
+          </li>
           <li>
             <i class="fa-li fa fa-trophy text-warning"></i>
             2<sup>nd</sup>
-            Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
+            Place - University of Colorado Boulder - Emerging Tech Competition 2008
+          </li>
           <li>
             <i class="fa-li fa fa-trophy text-warning"></i>
             1<sup>st</sup>
-            Place - James Buchanan High School - Hackathon 2006</li>
+            Place - James Buchanan High School - Hackathon 2006
+          </li>
           <li>
             <i class="fa-li fa fa-trophy text-warning"></i>
             3<sup>rd</sup>
-            Place - James Buchanan High School - Hackathon 2005</li>
+            Place - James Buchanan High School - Hackathon 2005
+          </li> -->
         </ul>
       </div>
     </section>
