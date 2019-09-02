@@ -11,6 +11,14 @@ body {
     padding-top: 0;
     padding-left: $sidebar-base-width;
   }
+
+  .hide {
+    display: none;
+  }
+
+  .mobile_img_header {
+    width: 121%
+  }
 }
 
 h1,
@@ -80,5 +88,15 @@ p.lead {
     &:hover {
       color: $primary;
     }
+  }
+}
+
+@media (min-width: 892px) {
+  .hide {
+    display: none;
+  }
+
+  .mobile_img_header {
+    width: 121%
   }
 }
