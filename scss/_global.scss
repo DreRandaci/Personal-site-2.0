@@ -91,12 +91,18 @@ p.lead {
   }
 }
 
-@media (min-width: 892px) {
+// These two @media queries are for the main image. Show the image in the main container of the page for anything 892px wide and below (when the side nav bar disappears). Not sure why the rule doesn't apply to the @media block going the other way, it should pick up at 893px, not 993px... but, it works. I suspect it's something with the global CSS that is overriding it.
+
+// Show the header image on mobile devices
+@media screen and (min-width: 0px) and (max-width: 892px) {
+  .hide {
+    display: block;
+  }
+}
+
+// Hide the header image for non-mobile devices
+@media screen and (min-width: 993px) {
   .hide {
     display: none;
-  }
-
-  .mobile_img_header {
-    width: 121%
   }
 }
